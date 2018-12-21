@@ -1,0 +1,21 @@
+---
+title: 'CSCE/STAT 587 Final Take-Home Portion #1'
+author: "Martin Jack Herbkersman"
+date: "12/12/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Report
+
+The below plot shows how the departure delay times varied by day of the week from 2000-2008. The spikes around the beginning and end of the work week may be a result of increased travel on those days by people who fly weekly for their jobs.
+
+```{r days, echo=FALSE}
+delay <- c(9, 7, 7, 9, 11, 7, 9)
+barplot(delay, names.arg = c("Mon         Tue         Wed        Thu          Fri           Sat         Sun"), main="Average Departure Time of Flights")
+```
+
+It does not seem unreasonable, considering the amount of flight data analyzed, to conclude that some days of the week exhibit larger departure delays. To more definitively test our hypothesis, one could perform an ANOVA test on the dataset. More specifically, the method to use would be a one-way ANOVA where there are seven factors, one for each day of the week. The test would be $H_0 =$ All means are equal; $H_a =$ At least one mean is different from the others; test at the $\alpha = 0.05$ significance level.
